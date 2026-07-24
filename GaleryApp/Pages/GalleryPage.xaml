@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GaleryApp.Pages.GalleryPage"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             Title="Галерея">
+
+    <StackLayout Padding="10">
+        <Label Text="Ваши фотографии" FontSize="Medium" HorizontalOptions="Center"/>
+        <CollectionView x:Name="ImagesCollection"
+                        SelectionMode="Single"
+                        HeightRequest="500">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <ffimageloading:CachedImage 
+                             Source="{Binding FilePath}" 
+                             Aspect="AspectFill"
+                             DownsampleWidth="300"
+                             CacheDuration="30.00:00:00"
+                             LoadingPlaceholder="placeholder.png"
+                             ErrorPlaceholder="error.png"/> 
+                        <Label Grid.Column="1" Text="{Binding FileName}" VerticalOptions="Center"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="CenterAndExpand"
+                     Spacing="20"
+                     Margin="0,10,0,0">
+            <Button Text="Открыть"
+                    Clicked="OpenButton_Clicked"
+                    BackgroundColor="LightGray"
+                    CornerRadius="15"/>
+            <Button Text="Удалить"
+                    Clicked="DeleteButton_Clicked"
+                    BackgroundColor="LightGray"
+                    CornerRadius="15"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
