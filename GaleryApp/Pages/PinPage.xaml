@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GaleryApp.Pages.PinPage"
+             Title="PIN-код">
+
+    <StackLayout Padding="30" VerticalOptions="CenterAndExpand" Spacing="15">
+        <Label Text="Введите PIN-код" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Title"/>
+        <Entry IsPassword="True" x:Name = "entry_pin" Placeholder ="4 цифры" MaxLength="4" Keyboard="Numeric" HorizontalOptions="Center"></Entry>
+        <Label x:Name="label_message" Text="" TextColor="Red" IsVisible="False" HorizontalOptions="Center"></Label>
+        <Button Text="Подтвердить" Clicked="SavePinButton_Clicked" CornerRadius="15" BackgroundColor="LightGray"></Button>
+    </StackLayout>
+</ContentPage>
