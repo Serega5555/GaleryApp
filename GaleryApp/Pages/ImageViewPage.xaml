@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GaleryApp.Pages.ImageViewPage"
+             Title="Просмотр">
+
+    <StackLayout Padding="10" Spacing="10">
+        <Image x:Name="imageView" Aspect="AspectFill" HeightRequest="400"/>
+        <Label x:Name="dateLabel" FontSize="Medium" HorizontalOptions ="Center"/>
+    </StackLayout>
+</ContentPage>
